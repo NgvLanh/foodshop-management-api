@@ -20,7 +20,6 @@ public class User {
     String email;
     String password;
     String phoneNumber;
-
     @ElementCollection(fetch = FetchType.EAGER)
     Set<String> roles;
 

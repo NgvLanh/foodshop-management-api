@@ -16,7 +16,7 @@ public class Address {
     private String province;
     private String district;
     private String ward;
-    private String streetAddress;
+    private Double shippingFee;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
