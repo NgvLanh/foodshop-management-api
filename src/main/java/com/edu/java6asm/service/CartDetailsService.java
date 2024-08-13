@@ -24,14 +24,15 @@ public class CartDetailsService {
         return cartDetailsRepository.save(cartDetails);
     }
 
-    public CartDetails updateQuantityByDish(Long dishId, CartDetails updatedCartDetails) {
-        var updated = cartDetailsRepository.findByDishId(dishId);
+    public CartDetails updateQuantityByDish(Long dishId, Long cartId,
+                                            CartDetails updatedCartDetails) {
+        var updated = cartDetailsRepository.findByDishIdAndCartId(dishId, cartId);
         updated.setQuantity(updated.getQuantity() + updatedCartDetails.getQuantity());
         return cartDetailsRepository.save(updated);
     }
 
-    public CartDetails existsCartDetails(Long dishId) {
-        return cartDetailsRepository.findByDishId(dishId);
+    public CartDetails existsCartDetails(Long dishId, Long cartId) {
+        return cartDetailsRepository.findByDishIdAndCartId(dishId, cartId);
     }
 
     public CartDetails updateQuantityCartDetails(Long cartDetailsId, CartDetails updatedCartDetails) {

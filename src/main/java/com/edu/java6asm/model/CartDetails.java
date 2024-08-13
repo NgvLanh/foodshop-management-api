@@ -22,7 +22,7 @@ public class CartDetails {
     @JoinColumn(name = "cart_id")
     Cart cart;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "dish_id")
     Dish dish;
 }

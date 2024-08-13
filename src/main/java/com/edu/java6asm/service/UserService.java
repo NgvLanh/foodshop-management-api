@@ -31,7 +31,7 @@ public class UserService {
         return userRepository.findById(userId)
                 .map(existingUser -> {
                     existingUser.setFullName(updatedUser.getFullName());
-                    existingUser.setEmail(updatedUser.getEmail());
+                    existingUser.setImage(updatedUser.getImage());
                     existingUser.setPhoneNumber(updatedUser.getPhoneNumber());
                     // TODO: Cập nhật các trường khác nếu cần
                     return userRepository.save(existingUser);

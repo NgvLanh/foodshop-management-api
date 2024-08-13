@@ -17,5 +17,8 @@ public class AddressService {
     public List<Address> getAddressByUserId(Long userId) {
         return addressRepository.findByUserId(userId);
     }
+    public List<Address> getAddressByOrderId(Long userId) {
+        return addressRepository.findByUserId(userId);
+    }
 }
 

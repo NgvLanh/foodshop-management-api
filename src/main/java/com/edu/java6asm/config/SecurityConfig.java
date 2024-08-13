@@ -38,6 +38,7 @@ public class SecurityConfig {
             "/categories",
             "/dishes/status-true",
             "/dishes/*",
+            "/api/v1/vnpay/order-return"
     };
 
     @Bean

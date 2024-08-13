@@ -20,12 +20,10 @@ public class CategoryService {
                 .orElseThrow(() -> new RuntimeException("Category not found"));
     }
     @PreAuthorize("hasRole('ADMIN')")
-
     public Category createCategory(Category category) {
         return categoryRepository.save(category);
     }
     @PreAuthorize("hasRole('ADMIN')")
-
     public Category updateCategory(Long id, Category category) {
         Category existingCategory = getCategoryById(id);
         existingCategory.setName(category.getName());
@@ -33,7 +31,6 @@ public class CategoryService {
         return categoryRepository.save(existingCategory);
     }
     @PreAuthorize("hasRole('ADMIN')")
-
     public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
     }

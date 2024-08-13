@@ -23,15 +23,18 @@ public class CartDetailsController {
         return ResponseEntity.ok(createCartDetails);
     }
 
-    @GetMapping("/{dishId}")
-    public ResponseEntity<?> existsCartDetails(@PathVariable Long dishId) {
-        var createCartDetails = cartDetailsService.existsCartDetails(dishId);
+    @GetMapping("/{dishId}/{cartId}")
+    public ResponseEntity<?> existsCartDetails(@PathVariable Long dishId,
+                                               @PathVariable Long cartId) {
+        var createCartDetails = cartDetailsService.existsCartDetails(dishId, cartId);
         return ResponseEntity.ok(createCartDetails);
     }
-    @PutMapping("/{dishId}")
+    @PutMapping("/{dishId}/{cartId}")
     public  ResponseEntity<?> updateQuantityByDish(@PathVariable Long dishId,
-                                                   @RequestBody CartDetails updatedCartDetails) {
-        var updated = cartDetailsService.updateQuantityByDish(dishId, updatedCartDetails);
+                                                   @PathVariable Long cartId,
+                                                   @RequestBody CartDetails updatedCartDetails
+                                                   ) {
+        var updated = cartDetailsService.updateQuantityByDish(dishId, cartId, updatedCartDetails);
         return ResponseEntity.ok(updated);
     }
 

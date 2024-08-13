@@ -55,7 +55,6 @@ public class DishService {
     public List<Dish> getDishes() {
         return dishRepository.getDishByStatusTrue();
     }
-    @PreAuthorize("hasRole('ADMIN')")
     public String uploadFile(MultipartFile file) {
         if (file.isEmpty()) {
             return "Please select a file to upload.";

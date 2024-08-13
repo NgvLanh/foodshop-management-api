@@ -1,26 +1,29 @@
 package com.edu.java6asm.model;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "order_details")
 public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Double price;
-    private Integer quantity;
+    Long id;
+    Double price;
+    Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    Order order;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "dish_id")
-    private Dish dish;
+    Dish dish;
 }

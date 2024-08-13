@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CartDetailsRepository extends JpaRepository<CartDetails, Long> {
-    CartDetails findByDishId(Long dishId);
+    CartDetails findByDishIdAndCartId(Long dishId, Long cartId);
     List<CartDetails> getCartDetailsByCartId(Long cartId);
 }
