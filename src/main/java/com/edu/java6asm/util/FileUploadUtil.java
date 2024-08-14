@@ -11,20 +11,20 @@ import java.nio.file.Paths;
 
 @Service
 public class FileUploadUtil {
-    // Thay đổi đường dẫn nếu cần
-    public static final String UPLOADED_FOLDER = "D:/FPT Polytechnic/Java 6/Assignment/restaurant-management/public/assets/images/";
+
+    private final static String uploadedFolder = "uploads/images/";
 
     public static String saveFile(String fileName, MultipartFile multipartFile) throws IOException {
-        // Tạo thư mục nếu chưa tồn tại
-        File directory = new File(UPLOADED_FOLDER);
+        File directory = new File(uploadedFolder);
         if (!directory.exists()) {
-            directory.mkdirs(); // Dùng mkdirs() để tạo tất cả các thư mục cần thiết
+            directory.mkdirs();
         }
 
-        // Lưu tệp
-        Path path = Paths.get(UPLOADED_FOLDER + fileName);
+        Path path = Paths.get(uploadedFolder + fileName);
         Files.write(path, multipartFile.getBytes());
 
-        return path.toString(); // Trả về đường dẫn tuyệt đối
+        System.out.println("File saved to: " + path.toAbsolutePath().toString());
+        return path.toString();
     }
+
 }

@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.edu</groupId>
-    <artifactId>java6-asm</artifactId>
+    <artifactId>foodshop-management-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>java6-asm</name>
     <description>java6-asm</description>
