@@ -1,18 +1,18 @@
 spring:
   application:
-    name: food-shop-management
+    name: ${APPLICATION_NAME}
   jpa:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/db_foodShop_management
+    url: ${DB_URL}
     username: root
-    password: MyStrong@Passw0rd
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jackson:
     serialization:
       indent-output: true
 jwt:
-  signerKey: EhZgs6o9HQe8iGdmD4QbRFdmVJKrMx31PCei8nnyHaKQCbx3g2kk9flzsaVmKDUr
+  signerKey: ${SIGNER_KEY}
 
 
